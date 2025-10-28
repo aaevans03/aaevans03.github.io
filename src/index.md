@@ -3,17 +3,6 @@ layout: base.njk
 title: Home
 ---
 
-## Hello World!
+**Hello, my name is Alex!** I am a computer science student studying at Brigham Young University.
 
-This is the homepage
-
-## Posts
-{% for post in collections.posts %}
-    <article>
-        <h3><a href="/posts/{{ post.data.slug }}/">{{ post.data.title }}
-        </a></h3>
-        <!-- {% if post.data.image %}
-            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" width="500">
-        {% endif %} -->
-    </article>
-{% endfor %}
+I am particularly interested in the field of **human-computer interaction**. I have a keen eye for visual design and love to using technology to benefit others.
