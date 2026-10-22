@@ -23,6 +23,7 @@ There are no tests or linters.
 - Pages (`src/index.html`, `src/work.njk`, `src/contact.md`) get `layout: base.njk` from global data set in `.eleventy.js`, so it isn't repeated in front matter. The layout pulls in `header.njk` and `footer.njk` from `src/_includes/`.
 - Work entries are one Markdown file each in `src/work/` (front matter: `title`, `order`, optional `tech`, `links` list; body is the description). `src/work/work.json` sets `permalink: false` so they render only as cards in `src/work.njk`, sorted by `order` via the `work` collection.
 - External `http(s)` links written in Markdown get `target="_blank" rel="noopener noreferrer"` automatically (markdown-it rule in `.eleventy.js`). Links in templates need it written by hand.
+- Colors and font stacks are CSS variables in `:root` at the top of `src/css/styles.css`.
 - `.md` and `.html` pages are processed with Liquid (Eleventy's default), not Nunjucks; only `.njk` files use Nunjucks.
 - Site navigation is hard-coded in `src/_includes/header.njk`; a new page needs a link added there.
 - Only `src/css` and `src/images` are passthrough-copied. Any new static asset folder needs its own `addPassthroughCopy` in `.eleventy.js`.
