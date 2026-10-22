@@ -1,0 +1,19 @@
+---
+title: Work
+---
+
+<h2>Work</h2>
+
+{# Each entry is a Markdown file in src/work/, sorted by its `order` field #}
+{% for item in collections.work %}
+<section>
+    <h3>{{ item.data.title }}</h3>
+    {{ item.content | safe }}
+    {% if item.data.tech or item.data.links %}
+    <p>
+        {%- if item.data.tech %}<strong>Technologies used:</strong> {{ item.data.tech }}{% if item.data.links %} / {% endif %}{% endif -%}
+        {%- for link in item.data.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.text }}</a>{% if not loop.last %} / {% endif %}{% endfor -%}
+    </p>
+    {% endif %}
+</section>
+{% endfor %}
